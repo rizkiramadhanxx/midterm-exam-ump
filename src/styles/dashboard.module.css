@@ -1,0 +1,63 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.table {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: aliceblue;
+  white-space: nowrap; 
+}
+.overflow_table {
+  overflow-x: auto;
+}
+.th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.tr {
+  border-bottom: 2px solid gray;
+  margin-left: 20px;
+}
+
+.td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.button {
+  padding: 8px 10px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor:pointer;
+}
+
+.wrapper_button {
+  width: fit-content;
+  padding: 10px 0;
+}
+
+.delete_button {
+  background-color: crimson;
+  color: white;
+}
+
+.edit_button {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+.wrapper_action {
+  display: flex;
+  gap: 5px;
+}
+
+.add_button {
+  background-color: greenyellow;
+}
