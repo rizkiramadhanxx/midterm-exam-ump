@@ -1,13 +1,11 @@
 'use client'
 
 import { Navbar } from "@/component/layout";
-import useHasMounted from "@/hooks/useHasMounted";
 import styles from '@/styles/add.module.css';
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import classNames from "classnames";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -24,52 +22,25 @@ const schema = z.object({
 
 type AddSchema = z.infer<typeof schema>
 
-export default function Update() {
-
-
+export default function Add() {
 
   const router = useRouter()
 
-  const { id } = router.query
-
-
   const { register, handleSubmit,
-    setValue,
     formState: { errors, isValid }
   } = useForm<AddSchema>({
     resolver: zodResolver(schema),
     mode: 'onBlur'
   })
 
-  useEffect(() => {
-
-    if (!id) {
-      return
-    }
-
-    axios.get('/api/student/' + router.query.id).then((response) => {
-
-      const { name, telephone, address, major, religion } = response.data.data
-
-      setValue('name', name)
-      setValue('telephone', telephone)
-      setValue('address', address)
-      setValue('major', religion)
-      setValue('major', major)
-    })
-
-
-  }, [id])
-
-
   const onSubmit = async (data: any) => {
-    const datafetch = await axios('/api/student/' + router.query.id, {
-      method: "PUT",
+    const datafetch = await axios('/api/student', {
+      method: "POST",
       data: data
     })
 
     if (datafetch.status === 200) {
-      router.push('/')
+      router.push('/dashboard')
     }
 
   }
@@ -81,7 +52,7 @@ export default function Update() {
         <div className={classNames(styles.content, 'container')}>
           <div className={styles.button_top}>
             <div onClick={() => router.back()} className={classNames(styles.button, styles.back)}>Kembali</div>
-            <div>Edit Data</div>
+            <div>Tambah Data</div>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className={styles.wrap_input}>

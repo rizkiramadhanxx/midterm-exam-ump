@@ -29,9 +29,8 @@ export default function Login() {
     if (data.email === 'tyawidi@gmail.com' && data.password === 'password123') {
 
       setCookie('isLogin', true)
-      router.push('/')
+      router.push('/dashboard')
     }
-
   }
 
 

@@ -39,7 +39,7 @@ export default function Home() {
       <div className={styles.wrapper}>
         <div className={classNames('container', styles.content)}>
           <div className={styles.wrapper_button}>
-            <button onClick={() => router.push('/add')} className={classNames(styles.button, styles.add_button)}>Tambah</button>
+            <button onClick={() => router.push('/dashboard/add')} className={classNames(styles.button, styles.add_button)}>Tambah</button>
           </div>
           <div className={styles.overflow_table}>
             {hasMounted && dataStudent &&
@@ -66,7 +66,7 @@ export default function Home() {
                       <td className={styles.td}>{student.address}</td>
                       <td className={styles.td}>
                         <div className={styles.wrapper_action}>
-                          <div className={classNames(styles.button, styles.edit_button)} onClick={() => router.push('/edit/' + student.id)}>Edit</div>
+                          <div className={classNames(styles.button, styles.edit_button)} onClick={() => router.push('/dashboard/edit/' + student.id)}>Edit</div>
                           <div className={classNames(styles.button, styles.delete_button)} onClick={() => handleDelete(student.id)}>Hapus</div>
                         </div>
                       </td>
