@@ -11,6 +11,23 @@
   padding-bottom: 20px;
 }
 
+.wrapper_tya {
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+
+.btn_logout {
+  background-color: red;
+  padding: 6px 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn_logout:hover {
+  background-color: brown;
+}
 
 @media screen and (min-width: 576px) {
 }

@@ -66,7 +66,7 @@ export default function Home() {
                       <td className={styles.td}>{student.address}</td>
                       <td className={styles.td}>
                         <div className={styles.wrapper_action}>
-                          <div className={classNames(styles.button, styles.edit_button)}>Edit</div>
+                          <div className={classNames(styles.button, styles.edit_button)} onClick={() => router.push('/edit/' + student.id)}>Edit</div>
                           <div className={classNames(styles.button, styles.delete_button)} onClick={() => handleDelete(student.id)}>Hapus</div>
                         </div>
                       </td>
